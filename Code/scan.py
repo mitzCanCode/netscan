@@ -176,8 +176,20 @@ def scan(v_switch: bool = False, vV_switch: bool = False, save_file: bool = Fals
         if save_file:
             save(scan_result = mapped_network, form = save_type, file_name = file_name)
 
-    # Example usage
+    def get_net_id():
+        split_router_ip = get_router_ip().split(".")
+        if get_sub_mask() == "24":
+            netid = split_router_ip[0]+"."+split_router_ip[1]+"."+split_router_ip[2]+"."
+        elif get_sub_mask() == "16":
+            netid = split_router_ip[0]+"."+split_router_ip[1]+"."
+        elif get_sub_mask() == "8":
+            netid = split_router_ip[0]+"."
+        else:
+            print(" :( The tool only works with class A,B and C networks")
+        
+        return netid
+
+    
+
     result = arp_table_mapper(f"{get_router_ip()}/{get_sub_mask()}")
     display_result(result)
-
-
