@@ -25,14 +25,16 @@ def scan(v_switch: bool = False, vV_switch: bool = False, save_file: bool = Fals
             print("Delaying the next call due to API limit")
         # In the case of the API not being able to find the vendor it will return unknown.
         if "errors" in api.json():
+            if vV_switch:
+                print("Vendor was not found")
             return "Unknown"
-        if vV_switch:
-            print("Vendor was not found")
+        
         # If no errors occur it will return the vendor.
         else:
+            if vV_switch:
+                print("Vendor was found successfuly")
             return api.json()["data"]["organization_name"]
-        if vV_switch:
-            print("Vendor was found successfuly")
+        
 
     # A command used to find the routers ip.
     def get_router_ip() -> str:
@@ -189,7 +191,56 @@ def scan(v_switch: bool = False, vV_switch: bool = False, save_file: bool = Fals
         
         return netid
 
+
+    # #Pinging every possible IP on the network and returning a list
+    # def get_ips():
+    #     ips = []
+    #     if get_sub_mask() == "24":
+    #         for i in range(1, 255):
+    #             IP = get_net_id() + str(i)
+    #             command = 'ping -c 1 -q '+IP+' && echo "true" || echo "false"'
+    #             checkIP = subprocess.run(command, shell=True, capture_output=True, text=True)
+    #             checkIP = checkIP.split("\n")
+    #             checkIP = checkIP[-2]
+    #             if checkIP == "True":
+    #                 ips.append(IP)
+    #             else:
+    #                 if v_switch:
+    #                     print("IP", IP, "could not be contacted")
+    #     elif get_sub_mask == "16":
+    #         for i in range(0,255):
+    #             for j in range(1,256):
+    #                 IP = get_net_id() + str(i) +"."+ str(j)
+    #                 command = 'ping -c 1 -q '+IP+' && echo "true" || echo "false"'
+    #                 checkIP = subprocess.run(command, shell=True, capture_output=True, text=True)
+    #                 checkIP = checkIP.split("\n")
+    #                 checkIP = checkIP[-2]
+    #                 if checkIP == "True":
+    #                     ips.append(IP)
+    #                 else:
+    #                     if v_switch:
+    #                         print("IP", IP, "could not be contacted")
+    #     elif get_sub_mask == "16":
+    #         for i in range(0,255):
+    #             for j in range(0,256):
+    #                 for k in range(1,256):
+    #                     IP = get_net_id() + str(i) +"."+ str(j) +"."+ str(k)
+    #                     command = 'ping -c 1 -q '+IP+' && echo "true" || echo "false"'
+    #                     checkIP = subprocess.run(command, shell=True, capture_output=True, text=True)
+    #                     checkIP = checkIP.split("\n")
+    #                     checkIP = checkIP[-2]
+    #                     if checkIP == "True":
+    #                         ips.append(IP)
+    #                     else:
+    #                         if v_switch:
+    #                             print("IP", IP, "could not be contacted")
+
+    #     return ips
+
+                
     
 
     result = arp_table_mapper(f"{get_router_ip()}/{get_sub_mask()}")
     display_result(result)
+
+    return result
