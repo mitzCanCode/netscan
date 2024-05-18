@@ -138,7 +138,6 @@ def main():
                 # Call the scan function with specified options
                 scan_result = scan(v_switch=verbose, vV_switch=very_verbose, save_file=save_file,
                                    save_type=save_type, file_name=file_name)
-                print(scan_result)  # Print scan result
             except Exception as e:
                 print("\nAn error occurred... :(")  # Print error message
                 print(e)  # Print exception details
