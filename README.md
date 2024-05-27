@@ -57,5 +57,4 @@ Enjoy scanning your network!
 ## Note
 You can get an API key by creating an account on https://macvendors.com
 
-```
 
