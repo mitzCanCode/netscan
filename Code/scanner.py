@@ -94,7 +94,7 @@ def scan(v_switch: bool = False, vV_switch: bool = False, save_file: bool = Fals
                 arp_table_map[id_counter] = {
                     'ip' : response.psrc,
                     'mac_address': response.hwsrc,
-                    'device_name': "get_device_name(response.psrc)",
+                    'device_name': get_device_name(response.psrc),
                     'vendor': api_lookup(response.hwsrc)
                 }
                 id_counter += 1
