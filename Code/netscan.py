@@ -135,7 +135,12 @@ def main():
                         print("Setting timeout to 1.5s")
                         timeout = 1.5
                 try:
-                    quick_scan(v_switch=verbose, vV_switch=very_verbose, save_file=save_file, file_name=file_name,timeout=timeout)
+                    hosts_up, hosts_down = quick_scan(v_switch=verbose, vV_switch=very_verbose, save_file=save_file, file_name=file_name,timeout=timeout)
+                    print(f"Total hosts up: {len(hosts_up)}")
+                    print(f"Total hosts down: {len(hosts_down)}")
+                    print("Hosts up:")
+                    for host in hosts_up:
+                        print(host)
                 except Exception as e:
                     print(e) 
         elif "scan" in prompt:  # If user wants to initiate a network scan
