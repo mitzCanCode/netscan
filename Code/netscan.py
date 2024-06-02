@@ -39,6 +39,17 @@ def main():
     
     print_logo()  # Displaying the logo
     print("\n")  # Printing a new line
+    # Printing help message
+    print("\033[91mAvailable Commands:\033[0m")
+    print("1. scan\t\t- Initiate a network scan")
+    print("2. check\t- Check detailed information about a device discovered during the scan")
+    print("3. qscan\t- Do a quick ping sweep to see which hosts are up and which are down")
+    print("3. results\t- Display the results of the network scan")
+    print("4. sniff\t- Sniff packets in the network")
+    print("5. help\t\t- Display help information about commands or general usage")
+    print("6. exit\t\t- Exit the program")          
+    print("For more inforamtion on a command use: [COMMAND] -h")
+    print("\n")  # Printing a new line
     
     while True:
         # Setting all the variables back to default
@@ -63,14 +74,16 @@ def main():
                 print("Options:")
                 print("  -h\t\tDisplay this help message")
             else:
-                # Printing available commands
+                # Printing help message
                 print("\033[91mAvailable Commands:\033[0m")
                 print("1. scan\t\t- Initiate a network scan")
                 print("2. check\t- Check detailed information about a device discovered during the scan")
+                print("3. qscan\t- Do a quick ping sweep to see which hosts are up and which are down")
                 print("3. results\t- Display the results of the network scan")
                 print("4. sniff\t- Sniff packets in the network")
                 print("5. help\t\t- Display help information about commands or general usage")
                 print("6. exit\t\t- Exit the program")          
+                print("For more inforamtion on a command use: [COMMAND] -h")
         elif "sniff" in prompt:
             if "-h" in prompt:
                 # Printing help message for sniff command
@@ -141,6 +154,10 @@ def main():
                     print("Hosts up:")
                     for host in hosts_up:
                         print(host)
+                    if verbose:
+                        print("Hosts down:")
+                        for host in hosts_down:
+                            print(host)
                 except Exception as e:
                     print(e) 
         elif "scan" in prompt:  # If user wants to initiate a network scan
