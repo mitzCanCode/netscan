@@ -3,152 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netscan</title>
+    <title>OhShint</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #1E1E2E;
-            color: #E0E0E0;
-        }
-        header {
-            color: #FF6B6B;
-            padding: 1rem;
-            text-align: center;
-        }
-        main {
-            padding: 2rem;
-        }
-        tt {
-            font-family: 'SF Mono', SFMono-Regular, ui-monospace, 'DejaVu Sans Mono', Menlo, Consolas, monospace;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #2D2D3A;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-align: center;
-        }
-        .description {
-            margin-top: 1rem;
-            font-size: 1rem;
-            line-height: 1.6;
-            color: #FF6B6B;
-        }
-        .commands, .usage, .notes, .contributors, .project-details {
-            margin-top: 2rem;
-        }
-        .commands ul, .notes ul, .contributors ul {
-            list-style: none;
-            padding: 0;
-        }
-        .commands li, .notes li, .contributors li {
-            margin-bottom: 0.5rem;
-        }
-        .footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: #28283C;
-            color: #E0E0E0;
-        }
-        .contributors ul {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-        .contributor {
-            text-align: center;
-            margin: 1rem;
-        }
-        .contributor img {
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-        }
-        .contributor p {
-            margin: 0.5rem 0;
-        }
-        .contributor a {
-            color: #FF6B6B;
-            text-decoration: none;
-        }
-        .contributor a:hover {
-            text-decoration: underline;
-        }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #001314; 
+    color: #f5fffa; 
+}
 
-        .mac-window {
-            width: 80%;
-            max-width: 900px;
-            background: #56565d;
-            backdrop-filter: blur(10px);
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            margin: 20px auto;
-        }
-        .mac-window-header {
-            display: flex;
-            align-items: center;
-            background: rgba(0, 0, 0, 0.22);
-            padding: 10px;
-        }
-        .mac-window-header .buttons {
-            display: flex;
-            gap: 8px;
-        }
-        .mac-window-header .button {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-        .mac-window-header .button.red {
-            background-color: #FF605C;
-        }
-        .mac-window-header .button.yellow {
-            background-color: #FFBD44;
-        }
-        .mac-window-header .button.green {
-            background-color: #00CA4E;
-        }
-        .mac-window-content {
-            padding: 10px;
-            color:#1E1E2E;
-        }
-        .bash {
-            color: #FF6B6B; /* Color for user@localhost */
-            font-weight: bold; /* Making it bold for emphasis */
-        }
-        
-        .command {
-            color: white; /* Color for the command "python3" */
-        }
-        
-        .step1_command {
-            color: white; /* Color for the filename "netscan.py" */
-        }
+header {
+    color: #deb887; 
+    padding: 1rem;
+    text-align: center;
+}
 
-        .netscan {
-            color: red; 
-        }
+main {
+    padding: 2rem;
+}
 
-        .pointer{
-            color:white;
-        }
-
-        .results{
-            color: white;
-        }
+.contributors ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.contributor {
+    text-align: center;
+    margin: 1rem;
+}
+.contributor img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+.contributor p {
+    margin: 0.5rem 0;
+}
+.contributor a {
+    color: #deb887;
+    text-decoration: none;
+}
+.contributor a:hover {
+    text-decoration: underline;
+}
 
 
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #1e1e1e; 
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
 
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
 
+.description {
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #deb887; 
+}
+
+.commands, .usage, .notes, .contributors, .project-details {
+    margin-top: 2rem;
+}
+
+.commands ul, .notes ul, .contributors ul {
+    list-style: none;
+    padding: 0;
+}
+
+.commands li, .notes li, .contributors li {
+    margin-bottom: 0.5rem;
+}
+
+.footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #1e1e1e; 
+    color: #f5fffa; 
+}
+.mac-window-content {
+    padding: 10px;
+}
+
+.mac-window {
+    width: 80%;
+    max-width: 900px;
+    background: #10262e; 
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 20px auto;
+}
+
+.mac-window-header {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.22);
+    padding: 10px;
+}
+
+.mac-window-header .buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.mac-window-header .button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.mac-window-header .button.red {
+    background-color: #f53d68; 
+}
+
+.mac-window-header .button.yellow {
+    background-color: #fbec5d; 
+}
+
+.mac-window-header .button.green {
+    background-color: #50c878; 
+}
+
+.bash {
+    color: #deb887; 
+    font-weight: bold;
+}
+
+.command {
+    color: #f5fffa; 
+}
+
+.OhShint {
+    color: #1faee9; 
+}
+
+.pointer {
+    color: #f5fffa; 
+}
+
+.results {
+    color: #f5fffa; 
+}
     </style>
 </head>
 <body>
@@ -157,14 +163,15 @@
         <div class="logo">
         <h5>
 <pre>
-       _____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ _____
-      //___//___//___//___//___//___//___//___//___//___//___//___//___//___//___//___//
-     //___//                _  __ ___ _____  ___  __   _   _  __                //___//
-    //___// _/7  _/7  _/7  / |/ // _//_  _/,' _/,'_/ .' \ / |/ /_/7  _/7  _/7  //___//
-   //___// /_ _7/_ _7/_ _7/ || // _/  / / _\ `./ /_ / o // || //_ _7/_ _7/_ _7//___//
-  //___//   //   //   // /_/|_//___/ /_/ /___,'|__//_n_//_/|_/  //   //   // //___//
- //___//___ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____//___//
-//___//___//___//___//___//___//___//___//___//___//___//___//___//___//___//___//
+     ('-. .-.  .-')    ('-. .-.              .-') _  .-') _    
+     ( OO )  / ( OO ). ( OO )  /             ( OO ) )(  OO) )   
+ .-'),-----. ,--. ,--.(_)---\_),--. ,--.  ,-.-') ,--./ ,--,' /     '._  
+( OO'  .-.  '|  | |  |/    _ | |  | |  |  |  |OO)|   \ |  |\ |'--...__) 
+/   |  | |  ||   .|  |\  :` `. |   .|  |  |  |  \|    \|  | )'--.  .--' 
+\_) |  |\|  ||       | '..`''.)|       |  |  |(_/|  .     |/    |  |    
+  \ |  | |  ||  .-.  |.-._)   \|  .-.  | ,|  |_.'|  |\    |     |  |    
+   `'  '-'  '|  | |  |\       /|  | |  |(_|  |   |  | \   |     |  |    
+     `-----' `--' `--' `-----' `--' `--'  `--'   `--'  `--'     `--'    
 </pre>
         </h5>
         </div>
@@ -172,21 +179,23 @@
     <main>
             <div class="container">
                 <div class="description">
-                    <p>Welcome to Netscan. This tool is designed to help you scan networks, identify devices, and gather detailed information about each device in a network. With a metasploit like feel to make it easier than ever to gain knowledge of the structure of a network.</p>
+                    <p>Welcome to OhShint. This is a tool designed to help with OSINT investigation. It can generate potential usernames and passwords, gather or clear exif data from an image and lookup potential social media profiles of a username.</p>
                 </div>
                 <div class="project-details">
                     <h2>Project Details</h2>
-                    <p>This project is hosted on GitHub. For more details, please visit the <a href="https://github.com/dxmxtrxs/netscan" style="color: #FF6B6B;">Netscan GitHub repository</a>.</p>
+                    <p>This project is hosted on GitHub. For more details, please visit the <a href="https://github.com/dxmxtrxs/OhShint" style="color: #DFD0B8;">OhShint GitHub repository</a>.</p>
                     <p>Contributions, issues, and feature requests are welcome! Feel free to check the repository for the latest updates and to participate in the development.</p>
                 </div>
                 <div class="commands">
                     <h2>Available Commands</h2>
                     <ul>
-                        <li><strong>scan</strong> - Initiate a network scan to discover devices.</li>
-                        <li><strong>check</strong> - Check detailed information about a specific device.</li>
-                        <li><strong>results</strong> - Display the results of the network scan.</li>
-                        <li><strong>sniff</strong> - Sniff packets in the network.</li>
-                        <li><strong>qscan</strong> - Do a quick scan returning all hosts that are up and down in a network.</li>
+                        <li><strong>mtdata</strong> - Extract or clear metadata from an image.</li>
+                        <li><strong>user</strong> - Generate a list of possible usernames.</li>
+                        <li><strong>pass</strong> - Generate a list of possible passwords.</li>
+                        <li><strong>mtdata</strong> - Extract and clear metadata from images.</li>
+                        <li><strong>lookup</strong> - Search for a username on different social media sites.</li>
+                        <li><strong>show</strong> - Display generated usernames, lookup results, or password list storage path.</li>
+                        <li><strong>visit</strong> - Open the webpage of a found url in a lookup.</li>
                         <li><strong>help</strong> - Display help information about commands or general usage.</li>
                         <li><strong>exit</strong> - Exit the program.</li>
                     </ul>
@@ -198,25 +207,7 @@
                     <h2>Setup</h2>
                     <ul>
                     <li><h3>Step 1:</h3></li>
-                    Download the latest version of netscan from the <a href="https://github.com/dxmxtrxs/netscan" style="color: #FF6B6B;">Netscan GitHub repository</a>.
-                    <div class="mac-window">
-                        <div class="mac-window-header">
-                            <div class="buttons">
-                                <div class="button red"></div>
-                                <div class="button yellow"></div>
-                                <div class="button green"></div>
-                            </div>
-                        </div>
-                        <div class="mac-window-content">
-<img src="assets/githubDownload.png", width="590">
-                        </div>
-                    </div>
-                    
-                    <li><h3>Step 2:</h3></li>
-                    Extract the zip file.
-
-                    <li><h3>Step 3:</h3></li>
-                    Navigate to the Netscan folder.
+                    Download the latest version of OhShint from the <a href="https://github.com/dxmxtrxs/OhShint" style="color: #DFD0B8;">OhShint GitHub repository</a>.
                     <div class="mac-window">
                         <div class="mac-window-header">
                             <div class="buttons">
@@ -227,13 +218,30 @@
                         </div>
                         <div class="mac-window-content">
                             <pre><code class="bash">
-<span class="user">user</span><span>@localhost</span># <span class="step1_command">cd /directory/where/netscan/was/extracted/to</span>
+<span class="user">user</span><span>@localhost</span># <span class="step1_command">git clone https://github.com/dxmxtrxs/OhShint.git</span>
+                            </code></pre>
+                        </div>
+                    </div>
+                    
+                    <li><h3>Step 2:</h3></li>
+                    Navigate to the OhShint folder.
+                    <div class="mac-window">
+                        <div class="mac-window-header">
+                            <div class="buttons">
+                                <div class="button red"></div>
+                                <div class="button yellow"></div>
+                                <div class="button green"></div>
+                            </div>
+                        </div>
+                        <div class="mac-window-content">
+                            <pre><code class="bash">
+<span class="user">user</span><span>@localhost</span># <span class="step1_command">cd /directory/where/ohshint/was/downloaded/at</span>
                             </code></pre>
                         </div>
                     </div>
                     
 
-                    <li><h3>Step 4:</h3></li>
+                    <li><h3>Step 3:</h3></li>
                     Install the requirements.
                     <div class="mac-window">
                         <div class="mac-window-header">
@@ -245,7 +253,7 @@
                         </div>
                         <div class="mac-window-content">
                             <pre><code class="bash">
-<span class="user">user</span><span>@localhost</span># <span class="step1_command">pip3 install -r requirements.txt</span>
+<span class="user">user</span><span>@localhost</span># <span class="step1_command">pip3 install piexif requests </span>
                             </code></pre>
                         </div>
                     </div>
@@ -271,13 +279,13 @@
                         </div>
                         <div class="mac-window-content">
                             <pre><code class="bash">
-<span class="user">user</span><span>@localhost</span># <span class="step1_command">sudo python3 netscan.py</span>
+<span class="user">user</span><span>@localhost</span># <span class="step1_command">python3 OhShint.py</span>
                             </code></pre>
                         </div>
                     </div>
 
                     <li><h3>Step 2:</h3></li>
-                    Start digging!
+                    Start searching!
                     <div class="mac-window">
                         <div class="mac-window-header">
                             <div class="buttons">
@@ -288,7 +296,7 @@
                         </div>
                         <div class="mac-window-content">
                             <pre><code class="bash">
-<span class="netscan">netscan</span><span class ="pointer">></span> <span class = "command">command</span>
+<span class="OhShint">OhShint</span><span class ="pointer">></span> <span class = "command">command</span>
 <span class="results"></span>    
                         </code></pre>
                         </div>
@@ -321,7 +329,7 @@
     </footer>
     <script>
         async function fetchContributors() {
-            const response = await fetch('https://api.github.com/repos/dxmxtrxs/netscan/contributors');
+            const response = await fetch('https://api.github.com/repos/dxmxtrxs/OhShint/contributors');
             const contributors = await response.json();
             const totalContributions = contributors.reduce((sum, contributor) => sum + contributor.contributions, 0);
 
@@ -351,7 +359,7 @@
 
     <script>
         // Array of available commands
-        const availableCommands = ["scan", "check 0", "results", "sniff", "qscan", "help", "exit"];
+        const availableCommands = ["user", "pass", "lookup spiderman", "mtdata /path/to/image", "mtdata /path/to/image -c -o", "show usernames", "show password", "show lookup", "visit 0", "help", "exit"];
         let currentIndex = 0;
 
 
@@ -367,106 +375,152 @@ function changeCommand() {
         commandElement.style.opacity = 1; // Fade in
 
         // Check if the current command is "scan"
-        if (commandElement.textContent === "scan") {
+        if (commandElement.textContent === "user") {
             // Update the content of the results span
             const resultsElement = document.querySelector('.results');
             resultsElement.innerHTML = `
-<span class="scanning">Scanning...</span>
-Getting router IP
-Getting subnet mask..
-Subnet mask found successfully!
-Requested ARP packet
-API calls started
-API calls done
-        
-ID\tIP ADDRESS\tMAC ADDRESS\t\tDEVICE NAME\tVENDOR
-0\t192.168.3.1\t76:ac:b9:16:49:3c\tDevice1\t\tVendor1
-1\t192.168.3.2\t76:ac:b9:16:49:3c\tDevice2\t\tVendor2
-2\t192.168.3.78\t8a:c7:d6:59:50:89\tDevice3\t\tVendor3
-3\t192.168.3.85\t7a:72:1c:26:6a:01\tDevice4\t\tVendor4
-4\t192.168.3.94\tee:d1:cd:3f:34:67\tDevice5\t\tVendor5
-5\t192.168.3.134\t74:12:b3:34:ee:0d\tDevice6\t\tVendor6
-6\t192.168.3.146\t04:d6:f4:cd:75:78\tDevice7\t\tVendor7
-            `;
-        } else if (commandElement.textContent === "sniff") {
+What is the name of the target: Master
+Enter the last name of the target: Chief
+Enter the birthday of the target (DDMMYYYY): 07032511
+Would you like to display the created usernames? (y/N): N
+Result won't be printed
+Enter the name you want the file to be saved as (optional): 
+File name was automatically set to: Master_Chief_usernames.txt
+File was saved to: /directory/to/save/Master_Chief_usernames.txt
+Total usernames generated: 64
+`;
+        } else if (commandElement.textContent === "pass") {
             // Update the content of the results span for sniff command
             const resultsElement = document.querySelector('.results');
             resultsElement.innerHTML = `
-Packet: Ether / IP / TCP 20.42.65.90:https > 192.168.3.74:63805 RA / Padding | Source IP: 20.42.65.90  |  Source MAC: 76:ac:b9:16:49:3c | Destination IP: 192.168.3.74  |  Destination MAC: 3c:22:fb:02:4b:b5 | Protocol: TCP | Time: 02-06-2024_11:26:04
---------------------------------------------------
-Packet: Ether / IP / UDP 192.168.3.1:52974 > 255.255.255.255:scp_config / Raw / Padding | Source IP: 192.168.3.1  |  Source MAC: 76:ac:b9:16:49:3c | Destination IP: 255.255.255.255  |  Destination MAC: ff:ff:ff:ff:ff:ff | Protocol: UDP | Time: 02-06-2024_11:26:12
---------------------------------------------------
-Packet: Ether / IP / TCP 20.201.28.148:https > 192.168.3.74:63952 PA / Raw | Source IP: 20.201.28.148  |  Source MAC: 76:ac:b9:16:49:3c | Destination IP: 192.168.3.74  |  Destination MAC: 3c:22:fb:02:4b:b5 | Protocol: TCP | Time: 02-06-2024_11:26:12
---------------------------------------------------
-Packet: Ether / IP / TCP 20.201.28.148:https > 192.168.3.74:63952 PA / Raw | Source IP: 20.201.28.148  |  Source MAC: 76:ac:b9:16:49:3c | Destination IP: 192.168.3.74  |  Destination MAC: 3c:22:fb:02:4b:b5 | Protocol: TCP | Time: 02-06-2024_11:26:12
---------------------------------------------------
-Packet: Ether / IP / TCP 20.201.28.148:https > 192.168.3.74:63952 FA | Source IP: 20.201.28.148  |  Source MAC: 76:ac:b9:16:49:3c | Destination IP: 192.168.3.74  |  Destination MAC: 3c:22:fb:02:4b:b5 | Protocol: TCP | Time: 02-06-2024_11:26:12
---------------------------------------------------
-Packet: Ether / IP / TCP 192.168.3.74:63952 > 20.201.28.148:https A | Source IP: 192.168.3.74  |  Source MAC: 3c:22:fb:02:4b:b5 | Destination IP: 20.201.28.148  |  Destination MAC: 76:ac:b9:16:49:3c | Protocol: TCP | Time: 02-06-2024_11:26:12
---------------------------------------------------
-Packet: Ether / IP / TCP 192.168.3.74:63952 > 20.201.28.148:https A | Source IP: 192.168.3.74  |  Source MAC: 3c:22:fb:02:4b:b5 | Destination IP: 20.201.28.148  |  Destination MAC: 76:ac:b9:16:49:3c | Protocol: TCP | Time: 02-06-2024_11:26:12
---------------------------------------------------
-Packet: Ether / IP / TCP 192.168.3.74:63952 > 20.201.28.148:https FA | Source IP: 192.168.3.74  |  Source MAC: 3c:22:fb:02:4b:b5 | Destination IP: 20.201.28.148  |  Destination MAC: 76:ac:b9:16:49:3c | Protocol: TCP | Time: 02-06-2024_11:26:12
---------------------------------------------------
-            `;
-        } else if (commandElement.textContent === "results") {
+What is the name of the target: Bob
+Enter the last name of the target: Squarepants
+Enter the birthday of the target (DDMMYYYY): 14071986
+Enter the name of the targets pet (optional): Gary
+Enter the nickname of the target (optional): Spongebob
+Enter the size of the wordlist
+A) Small (~500 passwords)
+B) Medium(~1500 passwords)
+C) Large(~14000 passwords)
+Note: Sizes vary based on the information given
+
+Selection: B
+Enter the name you want the file to be saved as (optional): 
+File name was automatically set to: Bob_Squarepants_wordlist.txt
+File was saved to: /directory/to/save/Bob_Squarepants_wordlist.txt
+Total passwords generated: 1500
+`;
+        } else if (commandElement.textContent === "mtdata /path/to/image") {
+            // Update the content of the results span for sniff command
+            const resultsElement = document.querySelector('.results');
+            resultsElement.innerHTML = `
+GPSInfo: {...}
+ResolutionUnit: 2
+ExifOffset: 228
+Make: Apple
+Model: iPhone 12
+Software: 17.5.1
+Orientation: 1
+DateTime: 2024:06:16 20:05:07
+YCbCrPositioning: 1
+XResolution: 72.0
+YResolution: 72.0
+HostComputer: iPhone 12
+...
+`;
+        } else if (commandElement.textContent === "mtdata /path/to/image -c -o") {
+            // Update the content of the results span for sniff command
+            const resultsElement = document.querySelector('.results');
+            resultsElement.innerHTML = `
+Metadata was cleared successfully!!!
+`;
+        }else if (commandElement.textContent === "lookup spiderman") {
             // Update the content of the results span for results command
             const resultsElement = document.querySelector('.results');
             resultsElement.innerHTML = `
-ID\tIP ADDRESS\tMAC ADDRESS\t\tDEVICE NAME\tVENDOR
-0\t192.168.3.1\t76:ac:b9:16:49:3c\tDevice1\t\tVendor1
-1\t192.168.3.2\t76:ac:b9:16:49:3c\tDevice2\t\tVendor2
-2\t192.168.3.78\t8a:c7:d6:59:50:89\tDevice3\t\tVendor3
-3\t192.168.3.85\t7a:72:1c:26:6a:01\tDevice4\t\tVendor4
-4\t192.168.3.94\tee:d1:cd:3f:34:67\tDevice5\t\tVendor5
-5\t192.168.3.134\t74:12:b3:34:ee:0d\tDevice6\t\tVendor6
-6\t192.168.3.146\t04:d6:f4:cd:75:78\tDevice7\t\tVendor7
-            `;
-        } else if (commandElement.textContent === "check 0") {
-            // Check if the ID is 0
-            // Update the content of the results span for ID 0
-            const resultsElement = document.querySelector('.results');
-            resultsElement.innerHTML = `
-Checking IP address 192.168.3.1
-Starting Nmap 7.94 ( https://nmap.org ) at 2024-06-02 11:32 EEST
-Nmap scan report for 192.168.3.1
-Host is up (0.0091s latency).
-Not shown: 999 filtered tcp ports (no-response)
-PORT   STATE SERVICE
-53/tcp open  domain
-MAC Address: 76:AC:B9:16:49:3C (Unknown)
+https://www.instagram.com/spiderman - 200 - OK
+Positive match.
 
-Nmap done: 1 IP address (1 host up) scanned in 17.92 seconds
-            `;
-            
-        } else if (commandElement.textContent === "qscan") {
+https://www.facebook.com/spiderman - 200 - OK
+Positive match.
+
+https://www.twitter.com/spiderman - 200 - OK
+Positive match.
+WARNING: Text has NOT been detected in url, could be a false positive.
+
+https://www.youtube.com/spiderman - 200 - OK
+Positive match.
+
+...
+
+FINISHED: A total of X MATCHES found out of Y websites.
+`;
+        } else if (commandElement.textContent === "show usernames") {
             // Check if the ID is 0
             // Update the content of the results span for ID 0
             const resultsElement = document.querySelector('.results');
             resultsElement.innerHTML = `
-Total hosts up: 6
-Total hosts down: 248
-Hosts up:
-192.168.3.2
-192.168.3.78
-192.168.3.85
-192.168.3.94
-192.168.3.134
-192.168.3.146
-            `;
+0: master
+1: chief
+2: masterchief
+3: chiefmaster
+4: master.chief
+5: chief.master
+6: master_chief
+7: chief_master
+8: mchief
+9: masterc
+10: m.chief
+11: master.c
+
+Username list was stored at:
+/directory/to/Master_Chief_usernames.txt
+`;
             
-        } else if (commandElement.textContent === "help") {
+        } else if (commandElement.textContent === "show password") {
             // Check if the ID is 0
             // Update the content of the results span for ID 0
             const resultsElement = document.querySelector('.results');
             resultsElement.innerHTML = `
-1. scan		- Initiate a network scan
-2. check	- Check detailed information about a device discovered during the scan
-3. results	- Display the results of the network scan
-4. sniff	- Sniff packets in the network
-5. help		- Display help information about commands or general usage
-6. exit		- Exit the program
-            `;
+Password list was stored at:
+/directory/to/Bob_Squarepants_wordlist.txt
+`;
+            
+        } else if (commandElement.textContent === "show lookup") {
+            // Check if the ID is 0
+            // Update the content of the results span for ID 0
+            const resultsElement = document.querySelector('.results');
+            resultsElement.innerHTML = `
+0: https://www.instagram.com/spiderman
+1: https://www.facebook.com/spiderman
+2: https://www.twitter.com/spiderman
+3: https://www.youtube.com/spiderman
+...
+`;}
+
+else if (commandElement.textContent === "visit 0") {
+    // Check if the ID is 0
+    // Update the content of the results span for ID 0
+    const resultsElement = document.querySelector('.results');
+    resultsElement.innerHTML = `
+Visiting https://www.instagram.com/spiderman...
+`;
+} else if (commandElement.textContent === "help") {
+            // Check if the ID is 0
+            // Update the content of the results span for ID 0
+            const resultsElement = document.querySelector('.results');
+            resultsElement.innerHTML = `
+Available Commands:
+1. user         - Generate a list of potential usernames
+2. pass         - Generate a list of potential passwords
+3. lookup       - Search for a username on different social media sites
+4. mtdata       - Extract and clear metadata from images
+5. show         - Display generated usernames, lookup results, or password list storage path
+5. visit        - Open the webpage of a found url in a lookup
+6. help         - Display this help message
+7. exit         - Exit the program
+For more information on a command use: [COMMAND] -h
+`;
             
         } else if (commandElement.textContent === "exit") {
             // Check if the ID is 0
