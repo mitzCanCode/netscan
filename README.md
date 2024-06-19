@@ -18,13 +18,16 @@ This Python-based network scanner allows you to scan your local network to ident
   - `scapy`
   - `requests`
   - `dicttoxml`
-  - `rainbowtext`
 
 ### Installing Dependencies
 ```bash
-pip install scapy requests dicttoxml rainbowtext
+pip install scapy requests dicttoxml
 ```
 
+### How to run
+```bash
+sudo python3 netscan.py
+```
 
 ### Customization
 You can customize the scan by modifying the script directly. Here are some customization options:
