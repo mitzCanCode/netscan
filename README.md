@@ -4,14 +4,6 @@
 This Python-based network scanner allows you to scan your local network to identify connected devices, their IP addresses, MAC addresses, device names, and vendors. It utilizes ARP requests to map the network and provides options to save the results in various formats (JSON, XML, or plain text).
 It also includes a packet sniffer, a scanner that pings every device on the network and a command to check for open ports on found devices
 
-## Features
-- **Network Scanning**: Identifies all devices connected to the local network.
-- **Vendor Lookup**: Retrieves the vendor information for each device using its MAC address.
-- **Device Information**: Displays IP address, MAC address, device name, and vendor for each device.
-- **Save Results**: Save scan results in JSON, XML, or plain text format.
-- **Verbose Output**: Optional verbose output for detailed logs.
-- **Customizable File Name**: Specify custom file names for saved results.
-
 ## Installation
 ### Prerequisites
 - Python 3.x
