@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netscan</title>
+    <link rel="stylesheet" href="styling/styling_desktop.css">
+    <link rel="icon" href="assets/netscan_rounded.png" type="image/png">
+
+</head>
+<body>
+    <tt>
+    <header>
+        <div class="logo">
+        <h5>
+<pre>
+       _____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ _____
+      //___//___//___//___//___//___//___//___//___//___//___//___//___//___//___//___//
+     //___//                _  __ ___ _____  ___  __   _   _  __                //___//
+    //___// _/7  _/7  _/7  / |/ // _//_  _/,' _/,'_/ .' \ / |/ /_/7  _/7  _/7  //___//
+   //___// /_ _7/_ _7/_ _7/ || // _/  / / _\ `./ /_ / o // || //_ _7/_ _7/_ _7//___//
+  //___//   //   //   // /_/|_//___/ /_/ /___,'|__//_n_//_/|_/  //   //   // //___//
+ //___//___ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____//___//
+//___//___//___//___//___//___//___//___//___//___//___//___//___//___//___//___//
+</pre>
+        </h5>
+        </div>
+    </header>
+    <main>
+            <div class="container">
+                <div class="description">
+                    <p>Welcome to Netscan. This tool is designed to help you scan networks, identify devices, and gather detailed information about each device in a network. With a metasploit like feel to make it easier than ever to gain knowledge of the structure of a network.</p>
+                </div>
+                <div class="project-details">
+                    <h2>Project Details</h2>
+                    <p>This project is hosted on GitHub. For more details, please visit the <a href="https://github.com/dxmxtrxs/netscan" style="color: #FF6B6B;">Netscan GitHub repository</a>.</p>
+                    <p>Contributions, issues, and feature requests are welcome! Feel free to check the repository for the latest updates and to participate in the development.</p>
+                </div>
+                <div class="commands">
+                    <h2>Available Commands</h2>
+                    <ul>
+                        <li><strong>scan</strong> - Initiate a network scan to discover devices.</li>
+                        <li><strong>check</strong> - Check detailed information about a specific device.</li>
+                        <li><strong>results</strong> - Display the results of the network scan.</li>
+                        <li><strong>sniff</strong> - Sniff packets in the network.</li>
+                        <li><strong>qscan</strong> - Do a quick scan returning all hosts that are up and down in a network.</li>
+                        <li><strong>help</strong> - Display help information about commands or general usage.</li>
+                        <li><strong>exit</strong> - Exit the program.</li>
+                    </ul>
+                </div>
+
+
+
+                <div class="setup">
+                    <h2>Setup</h2>
+                    <ul>
+                    <li><h3>Step 1:</h3></li>
+                        Navigate to the Netscan folder.
+                        <div class="mac-window">
+                            <div class="mac-window-header">
+                                <div class="buttons">
+                                    <div class="button red"></div>
+                                    <div class="button yellow"></div>
+                                    <div class="button green"></div>
+                                </div>
+                            </div>
+                            <div class="mac-window-content">
+                                <pre><code class="bash">
+<span class="user">user</span><span>@localhost</span># <span class="step1_command">git clone https://github.com/dxmxtrxs/netscan.git</span>
+                                </code></pre>
+                            </div>
+                        </div>
+
+
+                    <li><h3>Step 2:</h3></li>
+                    Navigate to the Netscan folder.
+                    <div class="mac-window">
+                        <div class="mac-window-header">
+                            <div class="buttons">
+                                <div class="button red"></div>
+                                <div class="button yellow"></div>
+                                <div class="button green"></div>
+                            </div>
+                        </div>
+                        <div class="mac-window-content">
+                            <pre><code class="bash">
+<span class="user">user</span><span>@localhost</span># <span class="step1_command">cd /directory/of/netscan</span>
+                            </code></pre>
+                        </div>
+                    </div>
+                    
+
+                    <li><h3>Step 3:</h3></li>
+                    Install the requirements.
+                    <div class="mac-window">
+                        <div class="mac-window-header">
+                            <div class="buttons">
+                                <div class="button red"></div>
+                                <div class="button yellow"></div>
+                                <div class="button green"></div>
+                            </div>
+                        </div>
+                        <div class="mac-window-content">
+                            <pre><code class="bash">
+<span class="user">user</span><span>@localhost</span># <span class="step1_command">pip3 install scapy requests dicttoxml</span>
+                            </code></pre>
+                        </div>
+                    </div>
+
+                
+                    <li><h3>Step 4:</h3></li>
+                    If not already installed, install <a href="https://nmap.org/download">Nmap</a> on your device
+                    <br>
+    <img src="assets/nmap.png", width="700">
+
+
+                <li><h3>Step 5:</h3></li>
+                Get an API key from  <a href = "https://macvendors.com">macvendors.com</a>
+                <br>
+                <img src="assets/macvendors.png", width="700">
+
+
+                <li><h3>Step 6:</h3></li>
+                Set the api key in the scanner.py file
+                <br>
+                <img src="assets/api_key_code.png", width="700">
+
+
+            </ul>
+
+                <div class="usage">
+                    <h2>How to use</h2>
+                    <ul>
+                    <li><h3>Step 1:</h3></li>
+                    Start the script.
+                    <div class="mac-window">
+                        <div class="mac-window-header">
+                            <div class="buttons">
+                                <div class="button red"></div>
+                                <div class="button yellow"></div>
+                                <div class="button green"></div>
+                            </div>
+                        </div>
+                        <div class="mac-window-content">
+                            <pre><code class="bash">
+<span class="user">user</span><span>@localhost</span># <span class="step1_command">sudo python3 netscan.py</span>
+                            </code></pre>
+                        </div>
+                    </div>
+
+                    <li><h3>Step 2:</h3></li>
+                    Start digging!
+                    <div class="mac-window">
+                        <div class="mac-window-header">
+                            <div class="buttons">
+                                <div class="button red"></div>
+                                <div class="button yellow"></div>
+                                <div class="button green"></div>
+                            </div>
+                        </div>
+                        <div class="mac-window-content">
+                            <pre><code class="bash">
+<span class="netscan">netscan</span><span class ="pointer">></span> <span class = "command">command</span>
+<span class="results"></span>    
+                        </code></pre>
+                        </div>
+                    </div>
+
+
+                    </ul>
+                </div>
+
+
+
+
+
+                <div class="notes">
+                    <h2>Notes</h2>
+                    <ul>
+                        <li>The script is stable on macOS it hasnt been tested in other operating systems yet.</li>
+                    </ul>
+                </div>
+                <div class="contributors">
+                    <h2>Contributors</h2>
+                    <ul id="contributors-list">
+                        <!-- Contributors will be dynamically inserted here -->
+                    </ul>
+                </div>
+            </div>
+    </main>
+    <footer class="footer">
+        This is a project made for fun; it shouldn't be used in real-world pentesting. We aren't liable for any damage caused by the user.
+    </footer>
+    <script src="javascript/contributors.js"></script>
+    <script src="javascript/commands.js"></script>
+
+    
+    
+    
+
+</tt>
+</body>
+</html>
