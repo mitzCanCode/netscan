@@ -52,7 +52,4 @@ Enjoy scanning your network!
 
 **Disclaimer**: This tool is for educational purposes only. Use it responsibly and ensure you have permission to scan the network you are using.
 
-## Note
-You can get an API key by creating an account on https://macvendors.com
-
 
