@@ -25,11 +25,8 @@ pip install scapy requests dicttoxml
 ```bash
 sudo python3 netscan.py
 ```
-
-### Customization
-You can customize the scan by modifying the script directly. Here are some customization options:
-- **API Key for MAC Vendor Lookup**: Replace the placeholder `YOUR_API_KEY` in the `api_lookup` function with your actual API key.
-- **Verbose and Very Verbose Output**: Adjust the verbosity by using `-v` and `-vv` options.
+### Note
+To run the script you must first set an API key at the function api_lookup in the scanner.py file. You can get an API key by creating an account on https://macvendors.com
 
 ## Capabilities 
 This script includes functions to:
