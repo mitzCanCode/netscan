@@ -75,12 +75,18 @@
         .contributor p {
             margin: 0.5rem 0;
         }
-        .contributor a {
+        a {
             color: #FF6B6B;
             text-decoration: none;
         }
-        .contributor a:hover {
+        a:hover {
             text-decoration: underline;
+        }
+
+        a:visited{
+            color: #d45959;
+            text-decoration: underline;
+
         }
 
         .mac-window {
@@ -198,24 +204,24 @@
                     <h2>Setup</h2>
                     <ul>
                     <li><h3>Step 1:</h3></li>
-                    Download the latest version of netscan from the <a href="https://github.com/dxmxtrxs/netscan" style="color: #FF6B6B;">Netscan GitHub repository</a>.
-                    <div class="mac-window">
-                        <div class="mac-window-header">
-                            <div class="buttons">
-                                <div class="button red"></div>
-                                <div class="button yellow"></div>
-                                <div class="button green"></div>
+                        Navigate to the Netscan folder.
+                        <div class="mac-window">
+                            <div class="mac-window-header">
+                                <div class="buttons">
+                                    <div class="button red"></div>
+                                    <div class="button yellow"></div>
+                                    <div class="button green"></div>
+                                </div>
+                            </div>
+                            <div class="mac-window-content">
+                                <pre><code class="bash">
+<span class="user">user</span><span>@localhost</span># <span class="step1_command">git clone https://github.com/dxmxtrxs/netscan.git</span>
+                                </code></pre>
                             </div>
                         </div>
-                        <div class="mac-window-content">
-<img src="assets/githubDownload.png", width="590">
-                        </div>
-                    </div>
-                    
-                    <li><h3>Step 2:</h3></li>
-                    Extract the zip file.
 
-                    <li><h3>Step 3:</h3></li>
+
+                    <li><h3>Step 2:</h3></li>
                     Navigate to the Netscan folder.
                     <div class="mac-window">
                         <div class="mac-window-header">
@@ -227,13 +233,13 @@
                         </div>
                         <div class="mac-window-content">
                             <pre><code class="bash">
-<span class="user">user</span><span>@localhost</span># <span class="step1_command">cd /directory/where/netscan/was/extracted/to</span>
+<span class="user">user</span><span>@localhost</span># <span class="step1_command">cd /directory/of/netscan</span>
                             </code></pre>
                         </div>
                     </div>
                     
 
-                    <li><h3>Step 4:</h3></li>
+                    <li><h3>Step 3:</h3></li>
                     Install the requirements.
                     <div class="mac-window">
                         <div class="mac-window-header">
@@ -245,16 +251,31 @@
                         </div>
                         <div class="mac-window-content">
                             <pre><code class="bash">
-<span class="user">user</span><span>@localhost</span># <span class="step1_command">pip3 install -r requirements.txt</span>
+<span class="user">user</span><span>@localhost</span># <span class="step1_command">pip3 install scapy requests dicttoxml</span>
                             </code></pre>
                         </div>
                     </div>
-                    </ul>
-                </div>
+
+                
+                    <li><h3>Step 4:</h3></li>
+                    If not already installed, install <a href="https://nmap.org/download">Nmap</a> on your device
+                    <br>
+    <img src="assets/nmap.png", width="700">
 
 
+                <li><h3>Step 5:</h3></li>
+                Get an API key from  <a href = "https://macvendors.com">macvendors.com</a>
+                <br>
+                <img src="assets/macvendors.png", width="700">
 
 
+                <li><h3>Step 6:</h3></li>
+                Set the api key in the scanner.py file
+                <br>
+                <img src="assets/api_key_code.png", width="700">
+
+
+            </ul>
 
                 <div class="usage">
                     <h2>How to use</h2>
