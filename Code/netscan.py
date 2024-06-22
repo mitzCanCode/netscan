@@ -42,8 +42,7 @@ def main():
     # Printing help message
     print("\033[91mAvailable Commands:\033[0m")
     print("1. scan\t\t- Initiate a network scan")
-    print("2. check\t- Check detailed information about a device discovered during the scan")
-    print("3. qscan\t- Do a quick ping sweep to see which hosts are up and which are down")
+    print("2. qscan\t- Do a quick ping sweep to see which hosts are up and which are down")
     print("3. results\t- Display the results of the network scan")
     print("4. sniff\t- Sniff packets in the network")
     print("5. help\t\t- Display help information about commands or general usage")
@@ -77,8 +76,7 @@ def main():
                 # Printing help message
                 print("\033[91mAvailable Commands:\033[0m")
                 print("1. scan\t\t- Initiate a network scan")
-                print("2. check\t- Check detailed information about a device discovered during the scan")
-                print("3. qscan\t- Do a quick ping sweep to see which hosts are up and which are down")
+                print("2. qscan\t- Do a quick ping sweep to see which hosts are up and which are down")
                 print("3. results\t- Display the results of the network scan")
                 print("4. sniff\t- Sniff packets in the network")
                 print("5. help\t\t- Display help information about commands or general usage")
@@ -209,28 +207,6 @@ def main():
             except Exception as e:
                 print("\nAn error occurred... :(")  # Print error message
                 print(e)  # Print exception details
-        elif "check" in prompt:  # If user wants to check detailed information about a device
-            if "-h" in prompt:  # If user wants help with check command
-                # Printing help message for check command
-                print("\033[91mCheck Command Help:\033[0m")
-                print("Usage: check [ID]")
-                print("Description: Check detailed information about a device discovered during the scan.")
-                print("Options:")
-                print("  -h\t\tDisplay this help message")
-                print("Example: check 1")
-                continue
-            try:
-                id_to_check = int(prompt[1])  # Get the ID of the device to check
-                if id_to_check in scan_result and scan_result:  # If ID is valid and scan result is available
-                    print("Checking IP address", scan_result[id_to_check]['ip'])  # Display IP address being checked
-                    # Run nmap scan on the specified device
-                    result = subprocess.run(f"nmap {scan_result[id_to_check]['ip']}", shell=True, capture_output=True,
-                                             text=True)
-                    print(result.stdout)  # Print nmap scan results
-                else:
-                    print("An error occurred.\nTry running the scan again or enter a valid number.")
-            except Exception as e:
-                print("Enter a valid ID please.")  # Print error message
         elif "results" in prompt:  # If user wants to display scan results
             if "-h" in prompt:  # If user wants help with results command
                 # Printing help message for results command
