@@ -7,7 +7,6 @@ It also includes a packet sniffer, a scanner that pings every device on the netw
 ## Installation
 ### Prerequisites
 - Python 3.x
-- Nmap (Download page: https://nmap.org/download)
 - Required Python packages:
   - `scapy`
   - `requests`
