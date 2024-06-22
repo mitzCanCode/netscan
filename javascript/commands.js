@@ -1,5 +1,5 @@
 // Array of available commands
-const availableCommands = ["scan", "check 0", "results", "sniff", "qscan", "help", "exit"];
+const availableCommands = ["scan", "results", "sniff", "qscan", "help", "exit"];
 let currentIndex = 0;
 
 // Function to change the command text with fade in and fade out animation
@@ -68,22 +68,6 @@ ID\tIP ADDRESS\tMAC ADDRESS\t\tDEVICE NAME\tVENDOR
 4\t192.168.3.94\tee:d1:cd:3f:34:67\tDevice5\t\tVendor5
 5\t192.168.3.134\t74:12:b3:34:ee:0d\tDevice6\t\tVendor6
 6\t192.168.3.146\t04:d6:f4:cd:75:78\tDevice7\t\tVendor7
-            `;
-        } else if (commandElement.textContent === "check 0") {
-            // Check if the ID is 0
-            // Update the content of the results span for ID 0
-            const resultsElement = document.querySelector('.results');
-            resultsElement.innerHTML = `
-Checking IP address 192.168.3.1
-Starting Nmap 7.94 ( https://nmap.org ) at 2024-06-02 11:32 EEST
-Nmap scan report for 192.168.3.1
-Host is up (0.0091s latency).
-Not shown: 999 filtered tcp ports (no-response)
-PORT   STATE SERVICE
-53/tcp open  domain
-MAC Address: 76:AC:B9:16:49:3C (Unknown)
-
-Nmap done: 1 IP address (1 host up) scanned in 17.92 seconds
             `;
         } else if (commandElement.textContent === "qscan") {
             // Check if the ID is 0
