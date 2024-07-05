@@ -4,6 +4,7 @@ from scanner import scan  # Importing the scan function from the scanner module.
 from sniffer import sniff_network  # Importing the sniff function from the sniffer module. Used for sniffing packets in the network
 from quick_scanner import quick_scan  # Importing the quick_scan function from the quick_scanner module
 import os  # Importing os module. Used to check if the user is running the script as root.
+from port_scan import scan_ports 
 
 from datetime import datetime  # Importing datetime module for date and time manipulation
 import subprocess  # Importing subprocess module to run shell commands from Python
@@ -45,8 +46,9 @@ def main():
     print("2. qscan\t- Do a quick ping sweep to see which hosts are up and which are down")
     print("3. results\t- Display the results of the network scan")
     print("4. sniff\t- Sniff packets in the network")
-    print("5. help\t\t- Display help information about commands or general usage")
-    print("6. exit\t\t- Exit the program")          
+    print("5. check\t- Run a port scan on a device discovered during a scan")
+    print("6. help\t\t- Display help information about commands or general usage")
+    print("7. exit\t\t- Exit the program")          
     print("For more inforamtion on a command use: [COMMAND] -h")
     print("\n")  # Printing a new line
     
@@ -158,6 +160,32 @@ def main():
                             print(host)
                 except Exception as e:
                     print(e) 
+        elif "check" in prompt:  # If user wants to check detailed information about a device
+            if "-h" in prompt:  # If user wants help with check command
+                # Printing help message for check command
+                print("\033[91mCheck Command Help:\033[0m")
+                print("Usage: check [ID]")
+                print("Description: Check detailed information about a device discovered during the scan.")
+                print("Options:")
+                print("  -h\t\tDisplay this help message")
+                print("Example: check 1")
+                continue
+            try:
+                id_to_check = int(prompt[1])  # Get the ID of the device to check
+                if id_to_check in scan_result and scan_result:  # If ID is valid and scan result is available
+                    print("Checking IP address", scan_result[id_to_check]['ip'])  # Display IP address being checked
+                    result = scan_ports(ip = scan_result[id_to_check]['ip'])
+                    print(f"Scanning {scan_result[id_to_check]['ip']} for common ports...")
+                    if result:
+                        print(f"Open ports on {scan_result[id_to_check]['ip']}:")
+                        for port, service in result:
+                            print(f"Port {port}: {service}")
+                    else:
+                        print(f"No common ports are open on {scan_result[id_to_check]['ip']}.")
+                else:
+                    print("An error occurred.\nTry running the scan again or enter a valid number.")
+            except Exception as e:
+                print("Enter a valid ID please.")  # Print error message
         elif "scan" in prompt:  # If user wants to initiate a network scan
             if "-h" in prompt:  # If user wants help with scan command
                 # Printing help message for scan command
