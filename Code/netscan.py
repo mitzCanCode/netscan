@@ -5,9 +5,7 @@ from sniffer import sniff_network  # Importing the sniff function from the sniff
 from quick_scanner import quick_scan  # Importing the quick_scan function from the quick_scanner module
 import os  # Importing os module. Used to check if the user is running the script as root.
 from port_scan import scan_ports 
-
 from datetime import datetime  # Importing datetime module for date and time manipulation
-import subprocess  # Importing subprocess module to run shell commands from Python
 
 # This function is used to display the ASCII art of this project
 def print_logo():
