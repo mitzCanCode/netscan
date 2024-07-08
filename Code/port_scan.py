@@ -68,7 +68,6 @@ def scan_ports(ip):
     print("Scan started")
     open_ports = []
     for port, service in common_ports.items():
-        print(f"Scanning {port}({service})")
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         sock.settimeout(1)  # Timeout of 1 second
         result = sock.connect_ex((ip, port))
