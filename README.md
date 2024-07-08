@@ -71,16 +71,28 @@ Netscan is a Python-based network utility tool with a graphical user interface (
 - `scanner.py`: Contains functions for network scanning and saving results.
 - `sniffer.py`: Contains functions for packet sniffing and processing packets.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ## Acknowledgements
 
 - The `scapy` library is used for packet manipulation and network scanning.
 - The `requests` library is used for making API calls to retrieve device vendor information.
 
-## Contact
 
-For any questions or feedback, please contact [your email address].
+### Note
+To run the script you must first set an API key at the function api_lookup in the scanner.py file. You can get an API key by creating an account on https://macvendors.com
+
+
+## Contribution
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## Contact
+For any inquiries or issues, please open an issue on the [GitHub repository](https://github.com/dxmxtrxs/netscan).
+
+---
+
+Enjoy scanning your network!
+
+---
+
+**Disclaimer**: This tool is for educational purposes only. Use it responsibly and ensure you have permission to scan the network you are using.
 
