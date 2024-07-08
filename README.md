@@ -1,8 +1,7 @@
 # Network Scanner
 
 ## Overview
-This Python-based network scanner allows you to scan your local network to identify connected devices, their IP addresses, MAC addresses, device names, and vendors. It utilizes ARP requests to map the network and provides options to save the results in various formats (JSON, XML, or plain text).
-It also includes a packet sniffer, a scanner that pings every device on the network.
+This Python-based network scanner allows you to scan your local network to identify connected devices, their IP addresses, MAC addresses, device names, and vendors. It utilizes ARP requests to map the network and provides options to save the results in various formats (JSON, XML, or plain text). Additionally, it includes a packet sniffer, a port scanner, and a ping based scanner to ping every device on the network.
 
 ## Installation
 ### Prerequisites
@@ -29,12 +28,12 @@ To run the script you must first set an API key at the function api_lookup in th
 
 ## Capabilities 
 This script includes functions to:
-- Scan the local network using ARP requests.
-- Lookup device vendor information via an API.
-- Save scan results in different formats (JSON, XML, TXT).
-- Display the scan results in a formatted table.
-- Sniff packets on the network.
-- Scan by pinging each device on the network.
+- Network Scanning: Scan the local network using ARP requests.
+- Vendor Lookup: Lookup device vendor information via an API.
+- Save Results: Save scan results in different formats (JSON, XML, TXT).
+- Packet Sniffing: Sniff packets on the network.
+- Ping Scan: Scan by pinging each device on the network.
+- Port Scanning: Scan for open ports on devices in the network.
 
 ## Contribution
 Contributions are welcome! Please feel free to submit a Pull Request.
