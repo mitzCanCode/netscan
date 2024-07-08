@@ -72,7 +72,7 @@ def arp_table_mapper(ip_addresses, v_switch: bool, vV_switch: bool) -> dict:
             arp_table_map[id_counter] = {
                 'ip': response.psrc,
                 'mac_address': response.hwsrc,
-                'device_name': get_device_name(response.psrc, vV_switch),
+                'device_name': "get_device_name(response.psrc, vV_switch)",
                 'vendor': api_lookup(response.hwsrc, vV_switch)
             }
             id_counter += 1
