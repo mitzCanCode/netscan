@@ -5,18 +5,19 @@ from sniffer import sniff_network  # Importing the sniff function from the sniff
 from quick_scanner import quick_scan  # Importing the quick_scan function from the quick_scanner module
 import os  # Importing os module. Used to check if the user is running the script as root.
 from port_scan import scan_ports 
+
 from datetime import datetime  # Importing datetime module for date and time manipulation
 
 # This function is used to display the ASCII art of this project
 def print_logo():
-    line1 = "       _____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ _____"
-    line2 = "      //___//___//___//___//___//___//___//___//___//___//___//___//___//___//___//___//"
-    line3 = "     //___//                _  __ ___ _____  ___  __   _   _  __                //___//"
-    line4 = "    //___// _/7  _/7  _/7  / |/ // _//_  _/,' _/,'_/ .' \ / |/ /_/7  _/7  _/7  //___//"
-    line5 = "   //___// /_ _7/_ _7/_ _7/ || // _/  / / _\ `./ /_ / o // || //_ _7/_ _7/_ _7//___//"
-    line6 = "  //___//   //   //   // /_/|_//___/ /_/ /___,'|__//_n_//_/|_/  //   //   // //___//"
-    line7 = " //___//___ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____//___//"
-    line8 = "//___//___//___//___//___//___//___//___//___//___//___//___//___//___//___//___//"
+    line1 = r"       _____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ _____"
+    line2 = r"      //___//___//___//___//___//___//___//___//___//___//___//___//___//___//___//___//"
+    line3 = r"     //___//                _  __ ___ _____  ___  __   _   _  __                //___//"
+    line4 = r"    //___// _/7  _/7  _/7  / |/ // _//_  _/,' _/,'_/ .' \ / |/ /_/7  _/7  _/7  //___//"
+    line5 = r"   //___// /_ _7/_ _7/_ _7/ || // _/  / / _\ `./ /_ / o // || //_ _7/_ _7/_ _7//___//"
+    line6 = r"  //___//   //   //   // /_/|_//___/ /_/ /___,'|__//_n_//_/|_/  //   //   // //___//"
+    line7 = r" //___//___ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____ ____//___//"
+    line8 = r"//___//___//___//___//___//___//___//___//___//___//___//___//___//___//___//___//"
     
     lines = [line1, line2, line3, line4, line5, line6, line7, line8]  # Storing all lines in a list
 
@@ -32,9 +33,19 @@ def time_format() -> str:
 
 
 def main():
-    if os.geteuid() != 0:
-        print("This script must be run as root.")
-        sys.exit(1)
+    if os.name == 'nt':
+        # Windows
+        is_admin = os.system("net session >nul 2>&1")
+        if is_admin != 0:
+            print("This script must be run as root.")
+            sys.exit(1)
+    else:
+        # Unix/Linux/MacOS
+        is_admin = os.geteuid() == 0
+        if not is_admin:
+            print("This script must be run as root.")
+            sys.exit(1)
+    
     
     print_logo()  # Displaying the logo
     print("\n")  # Printing a new line

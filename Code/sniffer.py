@@ -57,6 +57,7 @@ def sniff_network(save: bool = False, name: str = "sniffed_packets.txt"):  # Def
         with open(name, "w") as file:  # Opening a file in write mode to save packet information
             temp_packets = "\n".join(packet_list)  # Joining packet information into a single string
             file.write(temp_packets)  # Writing packet information to the file
+    
 
 if __name__ == "__main__":  # Executing the following code if the script is run directly
     sniff_network()  # Calling the sniff_network function to start packet sniffing
