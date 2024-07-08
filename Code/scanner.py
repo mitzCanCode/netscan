@@ -14,7 +14,7 @@ def time_format():
 # Function to make an API request and return a device's manufacturer by MAC address
 def api_lookup(mac_address: str, vV_switch: bool) -> str:
     url = f"https://api.macvendors.com/v1/lookup/{mac_address}"
-    headers = {"Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImp0aSI6ImVkN2E0MDM0LTczMzQtNDU2Yi05ODg4LWNkMDc5OGEyYWNlNiJ9.eyJpc3MiOiJtYWN2ZW5kb3JzIiwiYXVkIjoibWFjdmVuZG9ycyIsImp0aSI6ImVkN2E0MDM0LTczMzQtNDU2Yi05ODg4LWNkMDc5OGEyYWNlNiIsImlhdCI6MTY5MjExNjEwMSwiZXhwIjoyMDA2NjEyMTAxLCJzdWIiOiIxMzYzMyIsInR5cCI6ImFjY2VzcyJ9.Vu6tWTt9MByI63hqh08aiQZfNRAlyBl1sRH2eKvMZWwzYVQIUpu4_nRzxHF45kxjqLiXy2Q1WnaAPe2MYFZHlg"}
+    headers = {"Authorization": "Bearer API_KEY"}
     if vV_switch:
         print("Header for API lookup created")
     api = requests.get(url=url, headers=headers)
