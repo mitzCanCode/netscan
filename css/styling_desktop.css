@@ -1,0 +1,73 @@
+main {
+    padding: 2rem;
+}
+
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.mac-window {
+    width: 80%;
+    max-width: 900px;
+    background: #56565d;
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 20px auto;
+}
+.mac-window-header {
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.22);
+    padding: 10px;
+}
+.mac-window-header .buttons {
+    display: flex;
+    gap: 8px;
+}
+.mac-window-header .button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.mac-window-header .button.red {
+    background-color: #FF605C;
+}
+.mac-window-header .button.yellow {
+    background-color: #FFBD44;
+}
+.mac-window-header .button.green {
+    background-color: #00CA4E;
+}
+.mac-window-content {
+    padding: 10px;
+    color:#1E1E2E;
+}
+.bash {
+    color: #FF6B6B; /* Color for user@localhost */
+    font-weight: bold; /* Making it bold for emphasis */
+}
+
+.command {
+    color: white; /* Color for the command "python3" */
+}
+
+.step1_command {
+    color: white; /* Color for the filename "netscan.py" */
+}
+
+.netscan {
+    color: red; 
+}
+
+.pointer{
+    color:white;
+}
+
+.results{
+    color: white;
+}

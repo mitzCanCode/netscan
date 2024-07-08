@@ -4,62 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netscan</title>
-    <link rel="stylesheet" href="styling/styling_main.css">
-    <link rel="stylesheet" href="styling/styling_mobile.css">
+    <link rel="stylesheet" href="css/styling_main.css">
+    <link rel="stylesheet" href="css/styling_mobile.css">
     <link rel="icon" href="assets/netscan_rounded.png" type="image/png">
-
 </head>
 <body>
-    <tt>
     <header>
         <img src="assets/netscan_logo.png" style="max-width: 350px">
     </header>
     <main>
-            <div class="container">
-                <div class="description">
-                    <p>Welcome to Netscan. This tool is designed to help you scan networks, identify devices, and gather detailed information about each device in a network. With a metasploit like feel to make it easier than ever to gain knowledge of the structure of a network.</p>
-                </div>
-                <div class="project-details">
-                    <h2>Project Details</h2>
-                    <p>This project is hosted on GitHub. For more details, please visit the <a href="https://github.com/dxmxtrxs/netscan" style="color: #FF6B6B;">Netscan GitHub repository</a>.</p>
-                    <p>Contributions, issues, and feature requests are welcome! Feel free to check the repository for the latest updates and to participate in the development.</p>
-                </div>
-                <div class="commands">
-                    <h2>Available Commands</h2>
-                    <ul>
-                        <li><strong>scan</strong> - Initiate a network scan to discover devices.</li>
-                        <li><strong>check</strong> - Check detailed information about a specific device.</li>
-                        <li><strong>results</strong> - Display the results of the network scan.</li>
-                        <li><strong>sniff</strong> - Sniff packets in the network.</li>
-                        <li><strong>qscan</strong> - Do a quick scan returning all hosts that are up and down in a network.</li>
-                        <li><strong>help</strong> - Display help information about commands or general usage.</li>
-                        <li><strong>exit</strong> - Exit the program.</li>
-                    </ul>
-                </div>
-
-
-
-                <div class="notes">
-                    <h2>Notes</h2>
-                    <ul>
-                        <li>The script is stable on macOS it hasnt been tested in other operating systems yet.</li>
-                        <br>
-                        <li>For the installation process please open this webpage on a desktop device</li>
-                    </ul>
-
-                </div>
-                <div class="contributors">
-                    <h2>Contributors</h2>
-                    <ul id="contributors-list">
-                        <!-- Contributors will be dynamically inserted here -->
-                    </ul>
-                </div>
+        <div class="container">
+            <div class="description">
+                <p>Welcome to Netscan. This tool is designed to help you scan networks, identify devices, and gather detailed information about each device in a network. It provides a user-friendly interface inspired by Metasploit to simplify network structure analysis.</p>
             </div>
+            <div class="project-details">
+                <h2>Project Details</h2>
+                <p>This project is hosted on GitHub. For more details, please visit the <a href="https://github.com/dxmxtrxs/netscan" style="color: #FF6B6B;">Netscan GitHub repository</a>.</p>
+                <p>Contributions, issues, and feature requests are welcome! Feel free to check the repository for the latest updates and to participate in the development.</p>
+            </div>
+
+            <h1>CLI version:</h1>
+            <div class="commands">
+                <h2>Available Commands</h2>
+                <ul>
+                    <li><strong>scan</strong> - Initiate a network scan to discover devices.</li>
+                    <li><strong>check</strong> - Check detailed information about a specific device.</li>
+                    <li><strong>results</strong> - Display the results of the network scan.</li>
+                    <li><strong>sniff</strong> - Sniff packets in the network.</li>
+                    <li><strong>qscan</strong> - Do a ping scan to find devices on your network.</li>
+                    <li><strong>check</strong> - Run a port scan on a device discovered during a scan.</li>
+                    <li><strong>help</strong> - Display help information about commands or general usage.</li>
+                    <li><strong>exit</strong> - Exit the program.</li>
+                </ul>
+            </div>
+
+
+
+            <h1>Desktop app:</h1>
+            <div class="app-description">
+                <p>The desktop app provides a graphical user interface (GUI) for Netscan, allowing users to:</p>
+                <ul>
+                    <li>Scan networks to discover devices, displaying detailed information such as IP addresses, MAC addresses, and device names.</li>
+                    <li>Save scan results in JSON, XML, or text formats for further analysis.</li>
+                    <li>Initiate packet sniffing to analyze network traffic and view detailed packet information.</li>
+                    <li>View network structure and device details conveniently through a tabbed interface.</li>
+                </ul>
+            </div>
+
+            <div class="notes">
+                <h2>Notes</h2>
+                <ul>
+                    <li>The script is stable on macOS; it hasn't been tested on other operating systems yet.</li>
+                    <li>For the installation process, please open this webpage on a desktop device.</li>
+                </ul>
+            </div>
+
+            <div class="contributors">
+                <h2>Contributors</h2>
+                <ul id="contributors-list">
+                    <!-- Contributors will be dynamically inserted here -->
+                </ul>
+            </div>
+        </div>
     </main>
     <footer class="footer">
         This is a project made for fun; it shouldn't be used in real-world pentesting. We aren't liable for any damage caused by the user.
     </footer>
     <script src="javascript/contributors.js"></script>
-</tt>
 </body>
 </html>

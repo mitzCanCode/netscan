@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netscan</title>
-    <link rel="stylesheet" href="styling/styling_main.css">
-    <link rel="stylesheet" href="styling/styling_desktop.css">
+    <link rel="stylesheet" href="css/styling_main.css">
+    <link rel="stylesheet" href="css/styling_desktop.css">
     <link rel="icon" href="assets/netscan_rounded.png" type="image/png">
 
 </head>
@@ -37,13 +37,18 @@
                     <p>This project is hosted on GitHub. For more details, please visit the <a href="https://github.com/dxmxtrxs/netscan" style="color: #FF6B6B;">Netscan GitHub repository</a>.</p>
                     <p>Contributions, issues, and feature requests are welcome! Feel free to check the repository for the latest updates and to participate in the development.</p>
                 </div>
+
+                <h1>CLI version:</h1>
+
                 <div class="commands">
                     <h2>Available Commands</h2>
                     <ul>
                         <li><strong>scan</strong> - Initiate a network scan to discover devices.</li>
+                        <li><strong>check</strong> - Check detailed information about a specific device.</li>
                         <li><strong>results</strong> - Display the results of the network scan.</li>
                         <li><strong>sniff</strong> - Sniff packets in the network.</li>
-                        <li><strong>qscan</strong> - Do a quick scan returning all hosts that are up and down in a network.</li>
+                        <li><strong>qscan</strong> - Do a ping scan to find devices on your network.</li>
+                        <li><strong>check</strong> - Run a port scan on a device discovered during a scan.</li>
                         <li><strong>help</strong> - Display help information about commands or general usage.</li>
                         <li><strong>exit</strong> - Exit the program.</li>
                     </ul>
@@ -55,7 +60,7 @@
                     <h2>Setup</h2>
                     <ul>
                     <li><h3>Step 1:</h3></li>
-                        Navigate to the Netscan folder.
+                        Clone the Netscan repository.
                         <div class="mac-window">
                             <div class="mac-window-header">
                                 <div class="buttons">
@@ -159,11 +164,123 @@
                         </code></pre>
                         </div>
                     </div>
-
-
                     </ul>
                 </div>
 
+
+                <h1>Desktop app:</h1>
+                <div class="app-description">
+                    <p>The desktop app provides a graphical user interface (GUI) for Netscan, allowing users to:</p>
+                    <ul>
+                        <li>Scan networks to discover devices, displaying detailed information such as IP addresses, MAC addresses, and device names.</li>
+                        <li>Save scan results in JSON, XML, or text formats for further analysis.</li>
+                        <li>Initiate packet sniffing to analyze network traffic and view detailed packet information.</li>
+                        <li>View network structure and device details conveniently through a tabbed interface.</li>
+                    </ul>
+                </div>
+
+
+                <div class="setup">
+                    <h2>Setup</h2>
+                    <ul>
+                    <li><h3>Step 1:</h3></li>
+                    Clone the Netscan repository (The app branch).
+                    <div class="mac-window">
+                            <div class="mac-window-header">
+                                <div class="buttons">
+                                    <div class="button red"></div>
+                                    <div class="button yellow"></div>
+                                    <div class="button green"></div>
+                                </div>
+                            </div>
+                            <div class="mac-window-content">
+                                <pre><code class="bash">
+<span class="user">user</span><span>@localhost</span># <span class="step1_command">git clone -b App https://github.com/dxmxtrxs/netscan.git</span>
+                                </code></pre>
+                            </div>
+                        </div>
+
+
+                    <li><h3>Step 2:</h3></li>
+                    Navigate to the Netscan folder.
+                    <div class="mac-window">
+                        <div class="mac-window-header">
+                            <div class="buttons">
+                                <div class="button red"></div>
+                                <div class="button yellow"></div>
+                                <div class="button green"></div>
+                            </div>
+                        </div>
+                        <div class="mac-window-content">
+                            <pre><code class="bash">
+<span class="user">user</span><span>@localhost</span># <span class="step1_command">cd /directory/of/netscan/App/version</span>
+                            </code></pre>
+                        </div>
+                    </div>
+                    
+
+                    <li><h3>Step 3:</h3></li>
+                    Install the requirements.
+                    <div class="mac-window">
+                        <div class="mac-window-header">
+                            <div class="buttons">
+                                <div class="button red"></div>
+                                <div class="button yellow"></div>
+                                <div class="button green"></div>
+                            </div>
+                        </div>
+                        <div class="mac-window-content">
+                            <pre><code class="bash">
+<span class="user">user</span><span>@localhost</span># <span class="step1_command">pip3 install scapy requests dicttoxml</span>
+                            </code></pre>
+                        </div>
+                    </div>
+
+            
+                <li><h3>Step 4:</h3></li>
+                Get an API key from  <a href = "https://macvendors.com">macvendors.com</a>
+                <br>
+                <img src="assets/macvendors.png", width="700">
+
+
+                <li><h3>Step 5:</h3></li>
+                Set the api key in the scanner.py file
+                <br>
+                <img src="assets/api_key_code.png", width="700">
+
+
+            </ul>
+
+
+            <div class="usage">
+                <h2>How to use</h2>
+                <ul>
+                <li><h3>Step 1:</h3></li>
+                Start the app.
+                <div class="mac-window">
+                    <div class="mac-window-header">
+                        <div class="buttons">
+                            <div class="button red"></div>
+                            <div class="button yellow"></div>
+                            <div class="button green"></div>
+                        </div>
+                    </div>
+                    <div class="mac-window-content">
+                        <pre><code class="bash">
+<span class="user">user</span><span>@localhost</span># <span class="step1_command">sudo python3 app.py</span>
+                        </code></pre>
+                    </div>
+                </div>
+
+                <li><h3>Step 2:</h3></li>
+                Start digging!
+                <h4>Perform a scan:</h4>
+                <img src="assets/scanner_app.png", width="700">
+                <h4>Sniff packets:</h4>
+                <img src="assets/sniffer_app.png", width="700">
+
+                </ul>
+            </div>
 
 
 
