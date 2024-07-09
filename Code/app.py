@@ -5,9 +5,10 @@ import threading
 from datetime import datetime
 import os
 import sys
-from scanner import scan  
+from scanner import scan
 from port_scan import scan_ports
-from sniffer import start_sniffing, process_packet, get_interface_list  # Import the new function
+from sniffer import start_sniffing, stop_sniffing, process_packet, get_interface_list, packet_store  # Import the updated functions
+from scapy.utils import hexdump
 
 def check_admin():
     if os.name == 'nt':
@@ -106,7 +107,8 @@ def show_device_details(event):
             for found_port in result:
                 if found_ports_str:
                     found_ports_str += f"\nPort: {found_port[0]} {found_port[1]}"
-                else: found_ports_str += f"\nPort: {found_port[0]} {found_port[1]}"
+                else:
+                    found_ports_str += f"\nPort: {found_port[0]} {found_port[1]}"
         else:
             found_ports_str = "No open ports found"
             
@@ -142,15 +144,48 @@ def start_packet_sniffing():
     except Exception as e:
         status_label_sniffer.config(text=f"Error: {str(e)}")
 
-def stop_sniffing():
-    # Currently, there's no direct way to stop sniffing using Scapy in a thread.
-    # We can set a global variable to control this in a more complex implementation.
+def stop_sniffing_action():
+    stop_sniffing()
     status_label_sniffer.config(text="Packet sniffer stopped.")
     
     # Hide the stop button after stopping sniffing
     stop_button.pack_forget()
     # Show the start button
     start_button.pack(side=tk.RIGHT, padx=10)
+
+def show_packet_details(event):
+    selected_item = tree_sniffer.selection()[0]
+    pkt_id = int(selected_item)
+    packet = packet_store[pkt_id]
+    
+    detail_window = tk.Toplevel(root)
+    detail_window.title(f"Packet Details (ID: {pkt_id})")
+    detail_window.geometry("800x600")
+    
+    # Get packet summary
+    pkt_summary = packet.summary()
+    
+    # Parse packet layers and fields
+    pkt_details = []
+    for layer in packet.layers():
+        pkt_details.append(f"Layer: {layer}")
+        for field, value in packet[layer].fields.items():
+            pkt_details.append(f"{field.capitalize()}: {value}")
+        pkt_details.append("")  # Blank line for separation
+    
+    # Get hexadecimal dump of the packet
+    hex_dump = hexdump(packet, dump=True)
+    
+    summary_label = ttk.Label(detail_window, text=f"Packet Summary:\n{pkt_summary}")
+    summary_label.pack(pady=10)
+    
+    details_text = tk.Text(detail_window, wrap=tk.WORD)
+    details_text.insert(tk.END, "\n".join(pkt_details))
+    details_text.pack(expand=True, fill=tk.BOTH, padx=10, pady=10)
+    
+    hexdump_text = tk.Text(detail_window, wrap=tk.WORD)
+    hexdump_text.insert(tk.END, hex_dump)
+    hexdump_text.pack(expand=True, fill=tk.BOTH, padx=10, pady=10)
 
 # Check if the user has admin rights before initializing the main application window
 check_admin()
@@ -228,6 +263,8 @@ for col in columns_sniffer:
 
 tree_sniffer.pack(fill=tk.BOTH, expand=True)
 
+tree_sniffer.bind("<Double-1>", show_packet_details)  # Bind double-click event
+
 bottom_frame_sniffer = ttk.Frame(packet_sniffer_tab)
 bottom_frame_sniffer.pack(side=tk.BOTTOM, fill=tk.X, pady=10)
 
@@ -245,7 +282,7 @@ interface_combobox.set(interface_list[0] if interface_list else "No interfaces f
 start_button = ttk.Button(bottom_frame_sniffer, text="Start Sniffing", command=start_packet_sniffing)
 start_button.pack(side=tk.RIGHT, padx=10)
 
-stop_button = ttk.Button(bottom_frame_sniffer, text="Stop Sniffing", command=stop_sniffing)
+stop_button = ttk.Button(bottom_frame_sniffer, text="Stop Sniffing", command=stop_sniffing_action)
 # Initially hide the stop button
 stop_button.pack_forget()
 
