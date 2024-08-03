@@ -10,13 +10,14 @@ This Python-based network scanner allows you to scan your local network to ident
   - `scapy`
   - `requests`
   - `dicttoxml`
+  - `piexif`
  
 
 
 
 ### Installing Dependencies
 ```bash
-pip install scapy requests dicttoxml
+pip install scapy requests dicttoxml piexif
 ```
 
 ### How to run
